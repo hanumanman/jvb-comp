@@ -34,3 +34,26 @@
 // Follow-up: Can you come up with an algorithm that is less than  time complexity?O(n2)
 //
 // Link: https://leetcode.com/problems/two-sum/description/
+
+// Twosum is a hashmap problem
+function twoSum(nums: number[], target: number): number[] {
+  const map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const element: number = nums[i]!;
+
+    const compl = target - element;
+    const complIdx = map.get(compl);
+    if (complIdx !== undefined) {
+      return [i, complIdx];
+    }
+    map.set(element, i);
+  }
+
+  return [];
+}
+
+const nums = [3, 2, 4];
+const target = 6;
+
+console.log(twoSum(nums, target)); // should be [1,2]
