@@ -38,21 +38,17 @@
 // Twosum is a hashmap problem
 function twoSum(nums: number[], target: number): number[] {
   const map = new Map();
-
   for (let i = 0; i < nums.length; i++) {
-    const element: number = nums[i]!;
-
-    const compl = target - element;
-    const complIdx = map.get(compl);
-    if (complIdx !== undefined) {
-      return [i, complIdx];
+    const element = nums[i]!;
+    const complement = target - element;
+    const complementIdx = map.get(complement);
+    if (complementIdx !== undefined) {
+      return [complementIdx, i];
     }
     map.set(element, i);
   }
-
   return [];
 }
-
 const nums = [3, 2, 4];
 const target = 6;
 
