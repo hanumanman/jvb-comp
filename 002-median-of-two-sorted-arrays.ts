@@ -28,3 +28,11 @@
 // -106 <= nums1[i], nums2[i] <= 106
 //
 // Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
+
+function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
+  return 0;
+}
+
+const nums1 = [1, 3];
+const nums2 = [3, 4];
+console.log(findMedianSortedArrays(nums1, nums2)); // should be 2.5

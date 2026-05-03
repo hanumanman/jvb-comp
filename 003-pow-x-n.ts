@@ -28,3 +28,28 @@
 // -104 <= xn <= 104
 //
 // Link: https://leetcode.com/problems/powx-n/
+
+function myPow(x: number, n: number): number {
+  // Handle edge cases
+  if (n === 0) return 1;
+  if (n < 0) return 1 / myPow(x, n);
+
+  // Fast pow
+  let result = 1,
+    base = x,
+    exponent = Math.abs(n);
+  while (exponent > 0) {
+    if (exponent % 2 === 1) {
+      base *= result;
+    }
+
+    base *= base;
+    exponent = Math.floor(exponent / 2);
+  }
+  return result;
+}
+
+const x = 2,
+  n = -2;
+
+console.log(myPow(x, n)); // 0.25

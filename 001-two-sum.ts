@@ -49,6 +49,7 @@ function twoSum(nums: number[], target: number): number[] {
   }
   return [];
 }
+
 const nums = [3, 2, 4];
 const target = 6;
 
