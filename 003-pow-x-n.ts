@@ -30,23 +30,20 @@
 // Link: https://leetcode.com/problems/powx-n/
 
 function myPow(x: number, n: number): number {
-  // Handle edge cases
   if (n === 0) return 1;
-  if (n < 0) return 1 / myPow(x, n);
+  if (n < 0) return 1 / myPow(x, -n);
 
-  // Fast pow
-  let result = 1,
+  let res = 1,
     base = x,
-    exponent = Math.abs(n);
-  while (exponent > 0) {
-    if (exponent % 2 === 1) {
-      base *= result;
-    }
+    exp = Math.abs(n);
 
+  while (exp > 0) {
+    if (exp % 2 === 1) res *= base;
     base *= base;
-    exponent = Math.floor(exponent / 2);
+    exp = Math.floor(exp / 2);
   }
-  return result;
+
+  return res;
 }
 
 const x = 2,
